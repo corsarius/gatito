@@ -40,24 +40,6 @@ public class VentanaJuego extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jButton1.setText("jButton1");
-
-        jButton2.setText("jButton2");
-
-        jButton3.setText("jButton3");
-
-        jButton4.setText("jButton4");
-
-        jButton5.setText("jButton5");
-
-        jButton6.setText("jButton6");
-
-        jButton7.setText("jButton7");
-
-        jButton8.setText("jButton8");
-
-        jButton9.setText("jButton9");
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -82,7 +64,7 @@ public class VentanaJuego extends javax.swing.JFrame {
                         .addComponent(jButton8)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jButton9)))
-                .addContainerGap(123, Short.MAX_VALUE))
+                .addContainerGap(282, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -102,7 +84,7 @@ public class VentanaJuego extends javax.swing.JFrame {
                     .addComponent(jButton7)
                     .addComponent(jButton8)
                     .addComponent(jButton9))
-                .addContainerGap(169, Short.MAX_VALUE))
+                .addContainerGap(214, Short.MAX_VALUE))
         );
 
         pack();
