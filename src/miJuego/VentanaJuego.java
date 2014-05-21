@@ -5,25 +5,35 @@
  */
 package miJuego;
 
-import java.awt.Canvas;
 import java.awt.Color;
-import java.awt.Graphics;
-import java.awt.event.MouseEvent;
 import javax.swing.JButton;
 
-
 public class VentanaJuego extends javax.swing.JFrame {
+
     private static final long serialVersionUID = 1L;
-    
-    public boolean turno= false; 
+
+    enum enTurno {
+
+        cruz, circulo
+    };
+    enTurno turno = enTurno.cruz;
+    JButton botones[] = new JButton[10];
+    boolean jugando = true;
 
     /**
      * Creates new form VentanaJuego
      */
     public VentanaJuego() {
         initComponents();
-        //miCanvas canvas = new miCanvas(100,100);
-        //add(canvas);
+        botones[1] = btn1;
+        botones[2] = btn2;
+        botones[3] = btn3;
+        botones[4] = btn4;
+        botones[5] = btn5;
+        botones[6] = btn6;
+        botones[7] = btn7;
+        botones[8] = btn8;
+        botones[9] = btn9;
     }
 
     /**
@@ -147,542 +157,176 @@ public class VentanaJuego extends javax.swing.JFrame {
 
     private void btn1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn1ActionPerformed
         if (btn1.getText().equals("")) {
-            if (turno == false) {
-                btn1.setText("X");
-                turno = true;
-            } else {
-                btn1.setText("O");
-                turno = false;
-            }
-            recorre(1);
+            tirada(1);
         }
     }//GEN-LAST:event_btn1ActionPerformed
 
     private void btn2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn2ActionPerformed
         if (btn2.getText().equals("")) {
-            if (turno == false) {
-                btn2.setText("X");
-                turno = true;
-            } else {
-                btn2.setText("O");
-                turno = false;
-            }
-            recorre(2);
+            tirada(2);
         }
     }//GEN-LAST:event_btn2ActionPerformed
 
     private void btn3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn3ActionPerformed
         if (btn3.getText().equals("")) {
-            if (turno == false) {
-                btn3.setText("X");
-                turno = true;
-            } else {
-                btn3.setText("O");
-                turno = false;
-            }
-            recorre(3);
+            tirada(3);
         }
     }//GEN-LAST:event_btn3ActionPerformed
 
     private void btn4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn4ActionPerformed
         if (btn4.getText().equals("")) {
-            if (turno == false) {
-                btn4.setText("X");
-                turno = true;
-            } else {
-                btn4.setText("O");
-                turno = false;
-            }
-            recorre(4);
+            tirada(4);
         }
     }//GEN-LAST:event_btn4ActionPerformed
 
     private void btn5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn5ActionPerformed
         if (btn5.getText().equals("")) {
-            if (turno == false) {
-                btn5.setText("X");
-                turno = true;
-            } else {
-                btn5.setText("O");
-                turno = false;
-            }
-            recorre(5);
+            tirada(5);
         }
     }//GEN-LAST:event_btn5ActionPerformed
 
     private void btn6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn6ActionPerformed
         if (btn6.getText().equals("")) {
-            if (turno == false) {
-                btn6.setText("X");
-                turno = true;
-            } else {
-                btn6.setText("O");
-                turno = false;
-            }
-            recorre(6);
+            tirada(6);
         }
     }//GEN-LAST:event_btn6ActionPerformed
 
     private void btn7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn7ActionPerformed
         if (btn7.getText().equals("")) {
-            if (turno == false) {
-                btn7.setText("X");
-                turno = true;
-            } else {
-                btn7.setText("O");
-                turno = false;
-            }
-            recorre(7);
+            tirada(7);
         }
     }//GEN-LAST:event_btn7ActionPerformed
 
     private void btn8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn8ActionPerformed
         if (btn8.getText().equals("")) {
-            if (turno == false) {
-                btn8.setText("X");
-                turno = true;
-            } else {
-                btn8.setText("O");
-                turno = false;
-            }
-            recorre(8);
+            tirada(8);
         }
     }//GEN-LAST:event_btn8ActionPerformed
 
     private void btn9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn9ActionPerformed
         if (btn9.getText().equals("")) {
-            if (turno == false) {
-                btn9.setText("X");
-                turno = true;
-            } else {
-                btn9.setText("O");
-                turno = false;
-            }
-            recorre(9);
+            tirada(9);
         }
     }//GEN-LAST:event_btn9ActionPerformed
 
     private void mnuNuevo2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnuNuevo2ActionPerformed
         mnuMensaje.setText("Inicia Cruz");
-        turno=false;
-        btn1.setText("");
-        btn2.setText("");
-        btn3.setText("");
-        btn4.setText("");
-        btn5.setText("");
-        btn6.setText("");
-        btn7.setText("");
-        btn8.setText("");
-        btn9.setText("");
-        btn1.setBackground(new Color(214,217,223));
-        btn2.setBackground(new Color(214,217,223));
-        btn3.setBackground(new Color(214,217,223));
-        btn4.setBackground(new Color(214,217,223));
-        btn5.setBackground(new Color(214,217,223));
-        btn6.setBackground(new Color(214,217,223));
-        btn7.setBackground(new Color(214,217,223));
-        btn8.setBackground(new Color(214,217,223));
-        btn9.setBackground(new Color(214,217,223));
+        turno = enTurno.cruz;
+        for (int i = 1; i <= 9; i++) {
+            botones[i].setText("");
+            botones[i].setBackground(null);
+        }
+        jugando = true;
     }//GEN-LAST:event_mnuNuevo2ActionPerformed
 
-    void recorre (int posicion) {
-        
-        if (turno) {
-            mnuMensaje.setText("Turno siguiente: Circulo");
-        } else {
-            mnuMensaje.setText("Turno siguiente: Cruz");
-        }
-        
-        switch (posicion) {
-            case 1: 
-                //Con 2,3  4,7  y  5,9
-                if (btn2.getText().equals(btn1.getText())
-                    && btn3.getText().equals(btn1.getText())) {
-                    System.out.println("Ya ganó");
-                    
-                    btn1.setBackground(Color.green);
-                    btn2.setBackground(Color.green);
-                    btn3.setBackground(Color.green);
-                    
-                    if (btn1.getText().equals("X")) {
-                        mnuMensaje.setText("Ganó: Cruz");
-                    } else {
-                        mnuMensaje.setText("Ganó: Circulo");
+    void tirada(int posicion) {
+        if (jugando) {
+            if (turno == enTurno.cruz) {
+                botones[posicion].setText("X");
+                turno = enTurno.circulo;
+            } else {
+                botones[posicion].setText("O");
+                turno = enTurno.cruz;
+            }
+
+            if (turno == enTurno.circulo) {
+                mnuMensaje.setText("Turno siguiente: Circulo");
+            } else {
+                mnuMensaje.setText("Turno siguiente: Cruz");
+            }
+
+            switch (posicion) {
+
+                case 1:
+                    //Con 2,3  4,7  y  5,9
+
+                    if (valida(1, 2, 3) || valida(1, 4, 7) || valida(1, 5, 9)) {
+                        jugando = false;
                     }
-                }
-                
-                if (btn4.getText().equals(btn1.getText())
-                    && btn7.getText().equals(btn1.getText())) {
-                    System.out.println("Ya ganó");
-                    
-                    btn1.setBackground(Color.green);
-                    btn4.setBackground(Color.green);
-                    btn7.setBackground(Color.green);
-                    
-                    if (btn1.getText().equals("X")) {
-                        mnuMensaje.setText("Ganó: Cruz");
-                    } else {
-                        mnuMensaje.setText("Ganó: Circulo");
+
+                    break;
+
+                case 2:
+                    //con 1,3 y 5,8
+                    if (valida(2, 1, 3) || valida(2, 5, 8)) {
+                        jugando = false;
                     }
-                }
-                
-                if (btn5.getText().equals(btn1.getText())
-                    && btn9.getText().equals(btn1.getText())) {
-                    System.out.println("Ya ganó");
-                    
-                    btn1.setBackground(Color.green);
-                    btn5.setBackground(Color.green);
-                    btn9.setBackground(Color.green);
-                    
-                    if (btn1.getText().equals("X")) {
-                        mnuMensaje.setText("Ganó: Cruz");
-                    } else {
-                        mnuMensaje.setText("Ganó: Circulo");
+                    break;
+
+                case 3:
+                    //Con 1,2  6,9  y  5,7
+                    if (valida(3, 1, 2) || valida(3, 6, 9) || valida(3, 5, 7)) {
+                        jugando = false;
                     }
-                }                
-            break;
-        
-            case 2:
-                //con 1,3 y 5,8
-                if (btn1.getText().equals(btn2.getText())
-                    && btn3.getText().equals(btn2.getText())) {
-                    System.out.println("Ya ganó");
-                    
-                    btn2.setBackground(Color.green);
-                    btn1.setBackground(Color.green);
-                    btn3.setBackground(Color.green);
-                    
-                    if (btn2.getText().equals("X")) {
-                        mnuMensaje.setText("Ganó: Cruz");
-                    } else {
-                        mnuMensaje.setText("Ganó: Circulo");
+                    break;
+
+                case 4:
+                    //1,7 y 5,6
+                    if (valida(4, 1, 7) || valida(4, 5, 6)) {
+                        jugando = false;
                     }
-                }
-                
-                if (btn5.getText().equals(btn2.getText())
-                    && btn8.getText().equals(btn2.getText())) {
-                    System.out.println("Ya ganó");
-                    
-                    btn2.setBackground(Color.green);
-                    btn5.setBackground(Color.green);
-                    btn8.setBackground(Color.green);
-                    
-                    if (btn2.getText().equals("X")) {
-                        mnuMensaje.setText("Ganó: Cruz");
-                    } else {
-                        mnuMensaje.setText("Ganó: Circulo");
+                    break;
+
+                case 5:
+                    //2,8  4,6  1,9  7,3
+                    if (valida(5, 2, 8) || valida(5, 4, 6)
+                            || valida(5, 1, 9) || valida(5, 7, 3)) {
+                        jugando = false;
                     }
-                }
-            break;
-        
-            case 3: 
-                //Con 1,2  6,9  y  5,7
-                if (btn1.getText().equals(btn3.getText())
-                    && btn2.getText().equals(btn3.getText())) {
-                    System.out.println("Ya ganó");
-                    
-                    btn3.setBackground(Color.green);
-                    btn1.setBackground(Color.green);
-                    btn2.setBackground(Color.green);
-                    
-                    if (btn3.getText().equals("X")) {
-                        mnuMensaje.setText("Ganó: Cruz");
-                    } else {
-                        mnuMensaje.setText("Ganó: Circulo");
+                    break;
+
+                case 6:
+                    //3,9 y 4,5
+                    if (valida(6, 3, 9) || valida(6, 4, 5)) {
+                        jugando = false;
                     }
-                }
-                
-                if (btn6.getText().equals(btn3.getText())
-                    && btn9.getText().equals(btn3.getText())) {
-                    System.out.println("Ya ganó");
-                    
-                    btn3.setBackground(Color.green);
-                    btn6.setBackground(Color.green);
-                    btn9.setBackground(Color.green);
-                    
-                    if (btn3.getText().equals("X")) {
-                        mnuMensaje.setText("Ganó: Cruz");
-                    } else {
-                        mnuMensaje.setText("Ganó: Circulo");
+                    break;
+
+                case 7:
+                    // 1,4  8,9  5,3
+                    if (valida(7, 1, 4) || valida(7, 8, 9) || valida(7, 5, 3)) {
+                        jugando = false;
                     }
-                }
-                
-                if (btn5.getText().equals(btn3.getText())
-                    && btn7.getText().equals(btn3.getText())) {
-                    System.out.println("Ya ganó");
-                    
-                    btn3.setBackground(Color.green);
-                    btn5.setBackground(Color.green);
-                    btn7.setBackground(Color.green);
-                    
-                    if (btn3.getText().equals("X")) {
-                        mnuMensaje.setText("Ganó: Cruz");
-                    } else {
-                        mnuMensaje.setText("Ganó: Circulo");
+                    break;
+
+                case 8:
+                    //2,5  7,9
+                    if (valida(8, 2, 5) || valida(8, 7, 9)) {
+                        jugando = false;
                     }
-                } 
-            break;
-        
-            case 4: 
-                //1,7 y 5,6
-                if (btn1.getText().equals(btn4.getText())
-                    && btn7.getText().equals(btn4.getText())) {
-                    System.out.println("Ya ganó");
-                    
-                    btn4.setBackground(Color.green);
-                    btn1.setBackground(Color.green);
-                    btn7.setBackground(Color.green);
-                    
-                    if (btn4.getText().equals("X")) {
-                        mnuMensaje.setText("Ganó: Cruz");
-                    } else {
-                        mnuMensaje.setText("Ganó: Circulo");
+                    break;
+
+                case 9:
+                    //1,5  7,8  3,6
+                    if (valida(9, 1, 5) || valida(9, 7, 8) || valida(9, 3, 6)) {
+                        jugando = false;
                     }
-                }
-                
-                if (btn5.getText().equals(btn4.getText())
-                    && btn6.getText().equals(btn4.getText())) {
-                    System.out.println("Ya ganó");
-                    
-                    btn4.setBackground(Color.green);
-                    btn5.setBackground(Color.green);
-                    btn6.setBackground(Color.green);
-                    
-                    if (btn4.getText().equals("X")) {
-                        mnuMensaje.setText("Ganó: Cruz");
-                    } else {
-                        mnuMensaje.setText("Ganó: Circulo");
-                    }
-                }
-            break;
-                
-            case 5:   
-                //2,8  4,6  1,9  7,3
-                if (btn2.getText().equals(btn5.getText())
-                    && btn8.getText().equals(btn5.getText())) {
-                    System.out.println("Ya ganó");
-                    
-                    btn5.setBackground(Color.green);
-                    btn2.setBackground(Color.green);
-                    btn8.setBackground(Color.green);
-                    
-                    if (btn5.getText().equals("X")) {
-                        mnuMensaje.setText("Ganó: Cruz");
-                    } else {
-                        mnuMensaje.setText("Ganó: Circulo");
-                    }
-                }
-                
-                if (btn4.getText().equals(btn5.getText())
-                    && btn6.getText().equals(btn5.getText())) {
-                    System.out.println("Ya ganó");
-                    
-                    btn5.setBackground(Color.green);
-                    btn4.setBackground(Color.green);
-                    btn6.setBackground(Color.green);
-                    
-                    if (btn5.getText().equals("X")) {
-                        mnuMensaje.setText("Ganó: Cruz");
-                    } else {
-                        mnuMensaje.setText("Ganó: Circulo");
-                    }
-                }
-                
-                if (btn1.getText().equals(btn5.getText())
-                    && btn9.getText().equals(btn5.getText())) {
-                    System.out.println("Ya ganó");
-                    
-                    btn5.setBackground(Color.green);
-                    btn1.setBackground(Color.green);
-                    btn9.setBackground(Color.green);
-                    
-                    if (btn5.getText().equals("X")) {
-                        mnuMensaje.setText("Ganó: Cruz");
-                    } else {
-                        mnuMensaje.setText("Ganó: Circulo");
-                    }
-                }
-                
-                if (btn7.getText().equals(btn5.getText())
-                    && btn3.getText().equals(btn5.getText())) {
-                    System.out.println("Ya ganó");
-                    
-                    btn5.setBackground(Color.green);
-                    btn7.setBackground(Color.green);
-                    btn3.setBackground(Color.green);
-                    
-                    if (btn5.getText().equals("X")) {
-                        mnuMensaje.setText("Ganó: Cruz");
-                    } else {
-                        mnuMensaje.setText("Ganó: Circulo");
-                    }
-                }
-            break;
-        
-            case 6: 
-                //3,9 y 4,5
-                if (btn3.getText().equals(btn6.getText())
-                    && btn9.getText().equals(btn6.getText())) {
-                    System.out.println("Ya ganó");
-                    
-                    btn6.setBackground(Color.green);
-                    btn3.setBackground(Color.green);
-                    btn9.setBackground(Color.green);
-                    
-                    if (btn6.getText().equals("X")) {
-                        mnuMensaje.setText("Ganó: Cruz");
-                    } else {
-                        mnuMensaje.setText("Ganó: Circulo");
-                    }
-                }
-                
-                if (btn4.getText().equals(btn6.getText())
-                    && btn5.getText().equals(btn6.getText())) {
-                    System.out.println("Ya ganó");
-                    
-                    btn6.setBackground(Color.green);
-                    btn4.setBackground(Color.green);
-                    btn5.setBackground(Color.green);
-                    
-                    if (btn6.getText().equals("X")) {
-                        mnuMensaje.setText("Ganó: Cruz");
-                    } else {
-                        mnuMensaje.setText("Ganó: Circulo");
-                    }
-                }
-            break;
-        
-            case 7: 
-                // 1,4  8,9  5,3
-                if (btn1.getText().equals(btn7.getText())
-                    && btn4.getText().equals(btn7.getText())) {
-                    System.out.println("Ya ganó");
-                    
-                    btn7.setBackground(Color.green);
-                    btn1.setBackground(Color.green);
-                    btn4.setBackground(Color.green);
-                    
-                    if (btn7.getText().equals("X")) {
-                        mnuMensaje.setText("Ganó: Cruz");
-                    } else {
-                        mnuMensaje.setText("Ganó: Circulo");
-                    }
-                }
-                
-                if (btn8.getText().equals(btn7.getText())
-                    && btn9.getText().equals(btn7.getText())) {
-                    System.out.println("Ya ganó");
-                    
-                    btn7.setBackground(Color.green);
-                    btn8.setBackground(Color.green);
-                    btn9.setBackground(Color.green);
-                    
-                    if (btn7.getText().equals("X")) {
-                        mnuMensaje.setText("Ganó: Cruz");
-                    } else {
-                        mnuMensaje.setText("Ganó: Circulo");
-                    }
-                }
-                
-                if (btn5.getText().equals(btn7.getText())
-                    && btn3.getText().equals(btn7.getText())) {
-                    System.out.println("Ya ganó");
-                    
-                    btn7.setBackground(Color.green);
-                    btn5.setBackground(Color.green);
-                    btn3.setBackground(Color.green);
-                    
-                    if (btn7.getText().equals("X")) {
-                        mnuMensaje.setText("Ganó: Cruz");
-                    } else {
-                        mnuMensaje.setText("Ganó: Circulo");
-                    }
-                }
-            break;
-        
-            case 8: 
-                //2,5  7,9
-                if (btn2.getText().equals(btn8.getText())
-                    && btn5.getText().equals(btn8.getText())) {
-                    System.out.println("Ya ganó");
-                    
-                    btn8.setBackground(Color.green);
-                    btn2.setBackground(Color.green);
-                    btn5.setBackground(Color.green);
-                    
-                    if (btn8.getText().equals("X")) {
-                        mnuMensaje.setText("Ganó: Cruz");
-                    } else {
-                        mnuMensaje.setText("Ganó: Circulo");
-                    }
-                }
-                
-                if (btn7.getText().equals(btn8.getText())
-                    && btn9.getText().equals(btn8.getText())) {
-                    System.out.println("Ya ganó");
-                    
-                    btn8.setBackground(Color.green);
-                    btn7.setBackground(Color.green);
-                    btn9.setBackground(Color.green);
-                    
-                    if (btn8.getText().equals("X")) {
-                        mnuMensaje.setText("Ganó: Cruz");
-                    } else {
-                        mnuMensaje.setText("Ganó: Circulo");
-                    }
-                }
-            break;
-                
-            case 9:
-                //1,5  7,8  3,6
-                if (btn1.getText().equals(btn9.getText())
-                    && btn5.getText().equals(btn9.getText())) {
-                    System.out.println("Ya ganó");
-                    
-                    btn9.setBackground(Color.green);
-                    btn1.setBackground(Color.green);
-                    btn5.setBackground(Color.green);
-                    
-                    if (btn9.getText().equals("X")) {
-                        mnuMensaje.setText("Ganó: Cruz");
-                    } else {
-                        mnuMensaje.setText("Ganó: Circulo");
-                    }
-                }
-                
-                if (btn7.getText().equals(btn9.getText())
-                    && btn8.getText().equals(btn9.getText())) {
-                    System.out.println("Ya ganó");
-                    
-                    btn9.setBackground(Color.green);
-                    btn7.setBackground(Color.green);
-                    btn8.setBackground(Color.green);
-                    
-                    if (btn9.getText().equals("X")) {
-                        mnuMensaje.setText("Ganó: Cruz");
-                    } else {
-                        mnuMensaje.setText("Ganó: Circulo");
-                    }
-                }
-                
-                if (btn3.getText().equals(btn9.getText())
-                    && btn6.getText().equals(btn9.getText())) {
-                    System.out.println("Ya ganó");
-                    
-                    btn9.setBackground(Color.green);
-                    btn3.setBackground(Color.green);
-                    btn6.setBackground(Color.green);
-                    
-                    if (btn9.getText().equals("X")) {
-                        mnuMensaje.setText("Ganó: Cruz");
-                    } else {
-                        mnuMensaje.setText("Ganó: Circulo");
-                    }
-                }
-            break;
+                    break;
+            }
         }
     }
-    
+
+    boolean valida(int tirada, int primero, int segundo) {
+
+        if (botones[primero].getText().equals(botones[tirada].getText())
+                && botones[segundo].getText().equals(botones[tirada].getText())) {
+            System.out.println("Ya ganó");
+
+            botones[tirada].setBackground(Color.green);
+            botones[primero].setBackground(Color.green);
+            botones[segundo].setBackground(Color.green);
+
+            if (botones[tirada].getText().equals("X")) {
+                mnuMensaje.setText("Ganó: Cruz");
+            } else {
+                mnuMensaje.setText("Ganó: Circulo");
+            }
+            return true;
+        } else {
+            return false;
+        }
+    }
+
     /**
      * @param args the command line arguments
      */
@@ -735,35 +379,4 @@ public class VentanaJuego extends javax.swing.JFrame {
     private javax.swing.JMenu mnuNuevo;
     private javax.swing.JMenuItem mnuNuevo2;
     // End of variables declaration//GEN-END:variables
-}
-
-class miCanvas extends Canvas {
-
-    private static final long serialVersionUID = 1L;
-
-    private int ancho;
-    private int alto;
-
-    public miCanvas(int anc, int alt) {
-        ancho = anc;
-        alto = alt;
-
-        setBounds(0, 0, anc, alt);
-    }
-
-    @Override
-    public void paint(Graphics g) {
-        g.setColor(Color.blue);
-        g.fillRect(0, 0, ancho, alto);
-    }
-
-
-    @Override
-    public void processMouseEvent(MouseEvent evt) {
-        //if (evt.getX() < ancho && evt.getY() < alto) {            
-            System.out.println("Raton en Canvas: (" + evt.getX() + "," + evt.getY() + ")");
-            //return true;
-        //}
-        //return false;
-    }
 }
