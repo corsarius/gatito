@@ -66,6 +66,7 @@ public class VentanaJuego extends javax.swing.JFrame {
         jMenuItem2.setText("jMenuItem2");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Juego del Gato");
         setMinimumSize(new java.awt.Dimension(252, 200));
         setPreferredSize(new java.awt.Dimension(252, 250));
         getContentPane().setLayout(new java.awt.GridLayout(3, 3));
