@@ -70,14 +70,32 @@ public class VentanaJuego extends javax.swing.JFrame {
         setMinimumSize(new java.awt.Dimension(252, 200));
         setPreferredSize(new java.awt.Dimension(252, 250));
         getContentPane().setLayout(new java.awt.GridLayout(3, 3));
+
+        btn1.setFont(new java.awt.Font("DejaVu Sans", 0, 18)); // NOI18N
         getContentPane().add(btn1);
+
+        btn2.setFont(new java.awt.Font("DejaVu Sans", 0, 18)); // NOI18N
         getContentPane().add(btn2);
+
+        btn3.setFont(new java.awt.Font("DejaVu Sans", 0, 18)); // NOI18N
         getContentPane().add(btn3);
+
+        btn4.setFont(new java.awt.Font("DejaVu Sans", 0, 18)); // NOI18N
         getContentPane().add(btn4);
+
+        btn5.setFont(new java.awt.Font("DejaVu Sans", 0, 18)); // NOI18N
         getContentPane().add(btn5);
+
+        btn6.setFont(new java.awt.Font("DejaVu Sans", 0, 18)); // NOI18N
         getContentPane().add(btn6);
+
+        btn7.setFont(new java.awt.Font("DejaVu Sans", 0, 18)); // NOI18N
         getContentPane().add(btn7);
+
+        btn8.setFont(new java.awt.Font("DejaVu Sans", 0, 18)); // NOI18N
         getContentPane().add(btn8);
+
+        btn9.setFont(new java.awt.Font("DejaVu Sans", 0, 18)); // NOI18N
         getContentPane().add(btn9);
 
         mnuNuevo.setText("Nuevo Juego");

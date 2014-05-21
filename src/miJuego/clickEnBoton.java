@@ -26,7 +26,9 @@ class clickEnBoton implements ActionListener {
         for (int i = 1; i <= 9; i++) {
             if (outer.botones[i].equals(e.getSource())) {
                 //Source trae el boton de origen
-                outer.tirada(i);
+                if (outer.botones[i].getText().isEmpty()) {
+                    outer.tirada(i);
+                }
                 break;
             }
         }
