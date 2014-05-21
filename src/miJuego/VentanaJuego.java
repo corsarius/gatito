@@ -13,7 +13,7 @@ public class VentanaJuego extends javax.swing.JFrame {
     enum enTurno { cruz, circulo };
     enTurno turno = enTurno.cruz;
     JButton botones[] = new JButton[10];
-    
+    clickEnBoton click;
     boolean jugando = true;
 
     /**
@@ -21,6 +21,7 @@ public class VentanaJuego extends javax.swing.JFrame {
      */
     public VentanaJuego() {
         initComponents();
+        click = new clickEnBoton(this);
         botones[1] = btn1;
         botones[2] = btn2;
         botones[3] = btn3;
@@ -30,6 +31,10 @@ public class VentanaJuego extends javax.swing.JFrame {
         botones[7] = btn7;
         botones[8] = btn8;
         botones[9] = btn9;
+        
+        for (int i =1; i<=9; i++) {
+            botones[i].addActionListener(click);
+        }
     }
 
     /**
@@ -65,68 +70,14 @@ public class VentanaJuego extends javax.swing.JFrame {
         setMinimumSize(new java.awt.Dimension(252, 200));
         setPreferredSize(new java.awt.Dimension(252, 250));
         getContentPane().setLayout(new java.awt.GridLayout(3, 3));
-
-        btn1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn1ActionPerformed(evt);
-            }
-        });
         getContentPane().add(btn1);
-
-        btn2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn2ActionPerformed(evt);
-            }
-        });
         getContentPane().add(btn2);
-
-        btn3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn3ActionPerformed(evt);
-            }
-        });
         getContentPane().add(btn3);
-
-        btn4.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn4ActionPerformed(evt);
-            }
-        });
         getContentPane().add(btn4);
-
-        btn5.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn5ActionPerformed(evt);
-            }
-        });
         getContentPane().add(btn5);
-
-        btn6.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn6ActionPerformed(evt);
-            }
-        });
         getContentPane().add(btn6);
-
-        btn7.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn7ActionPerformed(evt);
-            }
-        });
         getContentPane().add(btn7);
-
-        btn8.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn8ActionPerformed(evt);
-            }
-        });
         getContentPane().add(btn8);
-
-        btn9.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn9ActionPerformed(evt);
-            }
-        });
         getContentPane().add(btn9);
 
         mnuNuevo.setText("Nuevo Juego");
@@ -151,60 +102,6 @@ public class VentanaJuego extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btn1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn1ActionPerformed
-        if (btn1.getText().equals("")) {
-            tirada(1);
-        }
-    }//GEN-LAST:event_btn1ActionPerformed
-
-    private void btn2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn2ActionPerformed
-        if (btn2.getText().equals("")) {
-            tirada(2);
-        }
-    }//GEN-LAST:event_btn2ActionPerformed
-
-    private void btn3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn3ActionPerformed
-        if (btn3.getText().equals("")) {
-            tirada(3);
-        }
-    }//GEN-LAST:event_btn3ActionPerformed
-
-    private void btn4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn4ActionPerformed
-        if (btn4.getText().equals("")) {
-            tirada(4);
-        }
-    }//GEN-LAST:event_btn4ActionPerformed
-
-    private void btn5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn5ActionPerformed
-        if (btn5.getText().equals("")) {
-            tirada(5);
-        }
-    }//GEN-LAST:event_btn5ActionPerformed
-
-    private void btn6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn6ActionPerformed
-        if (btn6.getText().equals("")) {
-            tirada(6);
-        }
-    }//GEN-LAST:event_btn6ActionPerformed
-
-    private void btn7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn7ActionPerformed
-        if (btn7.getText().equals("")) {
-            tirada(7);
-        }
-    }//GEN-LAST:event_btn7ActionPerformed
-
-    private void btn8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn8ActionPerformed
-        if (btn8.getText().equals("")) {
-            tirada(8);
-        }
-    }//GEN-LAST:event_btn8ActionPerformed
-
-    private void btn9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn9ActionPerformed
-        if (btn9.getText().equals("")) {
-            tirada(9);
-        }
-    }//GEN-LAST:event_btn9ActionPerformed
-
     private void mnuNuevo2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnuNuevo2ActionPerformed
         mnuMensaje.setText("Inicia Cruz");
         turno = enTurno.cruz;
@@ -218,7 +115,7 @@ public class VentanaJuego extends javax.swing.JFrame {
     void tirada(int posicion) {
         // realiza una tirada 
         if (jugando) {
-            
+
             //Coloca la marca
             if (turno == enTurno.cruz) {
                 botones[posicion].setText("X");
@@ -310,7 +207,7 @@ public class VentanaJuego extends javax.swing.JFrame {
         //tienen el mismo texto (Equis o O)
         if (botones[primero].getText().equals(botones[tirada].getText())
                 && botones[segundo].getText().equals(botones[tirada].getText())) {
-            
+
             System.out.println("Ya ganó");
 
             botones[tirada].setBackground(Color.green);
@@ -380,4 +277,5 @@ public class VentanaJuego extends javax.swing.JFrame {
     private javax.swing.JMenu mnuNuevo;
     private javax.swing.JMenuItem mnuNuevo2;
     // End of variables declaration//GEN-END:variables
+
 }
