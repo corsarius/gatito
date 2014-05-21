@@ -3,20 +3,27 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 package miJuego;
 
-/**
- *
- * @author hector
- */
+import java.awt.Canvas;
+import java.awt.Color;
+import java.awt.Graphics;
+import java.awt.event.MouseEvent;
+import javax.swing.JButton;
+
+
 public class VentanaJuego extends javax.swing.JFrame {
+    private static final long serialVersionUID = 1L;
+    
+    public boolean turno= false; 
 
     /**
      * Creates new form VentanaJuego
      */
     public VentanaJuego() {
         initComponents();
+        //miCanvas canvas = new miCanvas(100,100);
+        //add(canvas);
     }
 
     /**
@@ -28,68 +35,654 @@ public class VentanaJuego extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
-        jButton6 = new javax.swing.JButton();
-        jButton7 = new javax.swing.JButton();
-        jButton8 = new javax.swing.JButton();
-        jButton9 = new javax.swing.JButton();
+        jMenuItem1 = new javax.swing.JMenuItem();
+        jMenuItem2 = new javax.swing.JMenuItem();
+        btn1 = new javax.swing.JButton();
+        btn2 = new javax.swing.JButton();
+        btn3 = new javax.swing.JButton();
+        btn4 = new javax.swing.JButton();
+        btn5 = new javax.swing.JButton();
+        btn6 = new javax.swing.JButton();
+        btn7 = new javax.swing.JButton();
+        btn8 = new javax.swing.JButton();
+        btn9 = new javax.swing.JButton();
+        jMenuBar1 = new javax.swing.JMenuBar();
+        mnuNuevo = new javax.swing.JMenu();
+        mnuNuevo2 = new javax.swing.JMenuItem();
+        mnuMensaje = new javax.swing.JMenu();
+
+        jMenuItem1.setText("jMenuItem1");
+
+        jMenuItem2.setText("jMenuItem2");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setMinimumSize(new java.awt.Dimension(252, 200));
+        setPreferredSize(new java.awt.Dimension(252, 250));
+        getContentPane().setLayout(new java.awt.GridLayout(3, 3));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(22, 22, 22)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jButton7)
-                    .addComponent(jButton4)
-                    .addComponent(jButton1))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jButton2)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton3))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jButton5)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton6))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jButton8)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton9)))
-                .addContainerGap(282, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(38, 38, 38)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1)
-                    .addComponent(jButton2)
-                    .addComponent(jButton3))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton4)
-                    .addComponent(jButton5)
-                    .addComponent(jButton6))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton7)
-                    .addComponent(jButton8)
-                    .addComponent(jButton9))
-                .addContainerGap(214, Short.MAX_VALUE))
-        );
+        btn1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn1ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btn1);
+
+        btn2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn2ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btn2);
+
+        btn3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn3ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btn3);
+
+        btn4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn4ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btn4);
+
+        btn5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn5ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btn5);
+
+        btn6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn6ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btn6);
+
+        btn7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn7ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btn7);
+
+        btn8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn8ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btn8);
+
+        btn9.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn9ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btn9);
+
+        mnuNuevo.setText("Nuevo Juego");
+        mnuNuevo.setToolTipText("");
+
+        mnuNuevo2.setText("Nuevo");
+        mnuNuevo2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mnuNuevo2ActionPerformed(evt);
+            }
+        });
+        mnuNuevo.add(mnuNuevo2);
+
+        jMenuBar1.add(mnuNuevo);
+
+        mnuMensaje.setText("Inicia Cruz");
+        mnuMensaje.setEnabled(false);
+        jMenuBar1.add(mnuMensaje);
+
+        setJMenuBar(jMenuBar1);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void btn1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn1ActionPerformed
+        if (btn1.getText().equals("")) {
+            if (turno == false) {
+                btn1.setText("X");
+                turno = true;
+            } else {
+                btn1.setText("O");
+                turno = false;
+            }
+            recorre(1);
+        }
+    }//GEN-LAST:event_btn1ActionPerformed
+
+    private void btn2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn2ActionPerformed
+        if (btn2.getText().equals("")) {
+            if (turno == false) {
+                btn2.setText("X");
+                turno = true;
+            } else {
+                btn2.setText("O");
+                turno = false;
+            }
+            recorre(2);
+        }
+    }//GEN-LAST:event_btn2ActionPerformed
+
+    private void btn3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn3ActionPerformed
+        if (btn3.getText().equals("")) {
+            if (turno == false) {
+                btn3.setText("X");
+                turno = true;
+            } else {
+                btn3.setText("O");
+                turno = false;
+            }
+            recorre(3);
+        }
+    }//GEN-LAST:event_btn3ActionPerformed
+
+    private void btn4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn4ActionPerformed
+        if (btn4.getText().equals("")) {
+            if (turno == false) {
+                btn4.setText("X");
+                turno = true;
+            } else {
+                btn4.setText("O");
+                turno = false;
+            }
+            recorre(4);
+        }
+    }//GEN-LAST:event_btn4ActionPerformed
+
+    private void btn5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn5ActionPerformed
+        if (btn5.getText().equals("")) {
+            if (turno == false) {
+                btn5.setText("X");
+                turno = true;
+            } else {
+                btn5.setText("O");
+                turno = false;
+            }
+            recorre(5);
+        }
+    }//GEN-LAST:event_btn5ActionPerformed
+
+    private void btn6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn6ActionPerformed
+        if (btn6.getText().equals("")) {
+            if (turno == false) {
+                btn6.setText("X");
+                turno = true;
+            } else {
+                btn6.setText("O");
+                turno = false;
+            }
+            recorre(6);
+        }
+    }//GEN-LAST:event_btn6ActionPerformed
+
+    private void btn7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn7ActionPerformed
+        if (btn7.getText().equals("")) {
+            if (turno == false) {
+                btn7.setText("X");
+                turno = true;
+            } else {
+                btn7.setText("O");
+                turno = false;
+            }
+            recorre(7);
+        }
+    }//GEN-LAST:event_btn7ActionPerformed
+
+    private void btn8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn8ActionPerformed
+        if (btn8.getText().equals("")) {
+            if (turno == false) {
+                btn8.setText("X");
+                turno = true;
+            } else {
+                btn8.setText("O");
+                turno = false;
+            }
+            recorre(8);
+        }
+    }//GEN-LAST:event_btn8ActionPerformed
+
+    private void btn9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn9ActionPerformed
+        if (btn9.getText().equals("")) {
+            if (turno == false) {
+                btn9.setText("X");
+                turno = true;
+            } else {
+                btn9.setText("O");
+                turno = false;
+            }
+            recorre(9);
+        }
+    }//GEN-LAST:event_btn9ActionPerformed
+
+    private void mnuNuevo2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnuNuevo2ActionPerformed
+        mnuMensaje.setText("Inicia Cruz");
+        turno=false;
+        btn1.setText("");
+        btn2.setText("");
+        btn3.setText("");
+        btn4.setText("");
+        btn5.setText("");
+        btn6.setText("");
+        btn7.setText("");
+        btn8.setText("");
+        btn9.setText("");
+        btn1.setBackground(new Color(214,217,223));
+        btn2.setBackground(new Color(214,217,223));
+        btn3.setBackground(new Color(214,217,223));
+        btn4.setBackground(new Color(214,217,223));
+        btn5.setBackground(new Color(214,217,223));
+        btn6.setBackground(new Color(214,217,223));
+        btn7.setBackground(new Color(214,217,223));
+        btn8.setBackground(new Color(214,217,223));
+        btn9.setBackground(new Color(214,217,223));
+    }//GEN-LAST:event_mnuNuevo2ActionPerformed
+
+    void recorre (int posicion) {
+        
+        if (turno) {
+            mnuMensaje.setText("Turno siguiente: Circulo");
+        } else {
+            mnuMensaje.setText("Turno siguiente: Cruz");
+        }
+        
+        switch (posicion) {
+            case 1: 
+                //Con 2,3  4,7  y  5,9
+                if (btn2.getText().equals(btn1.getText())
+                    && btn3.getText().equals(btn1.getText())) {
+                    System.out.println("Ya ganó");
+                    
+                    btn1.setBackground(Color.green);
+                    btn2.setBackground(Color.green);
+                    btn3.setBackground(Color.green);
+                    
+                    if (btn1.getText().equals("X")) {
+                        mnuMensaje.setText("Ganó: Cruz");
+                    } else {
+                        mnuMensaje.setText("Ganó: Circulo");
+                    }
+                }
+                
+                if (btn4.getText().equals(btn1.getText())
+                    && btn7.getText().equals(btn1.getText())) {
+                    System.out.println("Ya ganó");
+                    
+                    btn1.setBackground(Color.green);
+                    btn4.setBackground(Color.green);
+                    btn7.setBackground(Color.green);
+                    
+                    if (btn1.getText().equals("X")) {
+                        mnuMensaje.setText("Ganó: Cruz");
+                    } else {
+                        mnuMensaje.setText("Ganó: Circulo");
+                    }
+                }
+                
+                if (btn5.getText().equals(btn1.getText())
+                    && btn9.getText().equals(btn1.getText())) {
+                    System.out.println("Ya ganó");
+                    
+                    btn1.setBackground(Color.green);
+                    btn5.setBackground(Color.green);
+                    btn9.setBackground(Color.green);
+                    
+                    if (btn1.getText().equals("X")) {
+                        mnuMensaje.setText("Ganó: Cruz");
+                    } else {
+                        mnuMensaje.setText("Ganó: Circulo");
+                    }
+                }                
+            break;
+        
+            case 2:
+                //con 1,3 y 5,8
+                if (btn1.getText().equals(btn2.getText())
+                    && btn3.getText().equals(btn2.getText())) {
+                    System.out.println("Ya ganó");
+                    
+                    btn2.setBackground(Color.green);
+                    btn1.setBackground(Color.green);
+                    btn3.setBackground(Color.green);
+                    
+                    if (btn2.getText().equals("X")) {
+                        mnuMensaje.setText("Ganó: Cruz");
+                    } else {
+                        mnuMensaje.setText("Ganó: Circulo");
+                    }
+                }
+                
+                if (btn5.getText().equals(btn2.getText())
+                    && btn8.getText().equals(btn2.getText())) {
+                    System.out.println("Ya ganó");
+                    
+                    btn2.setBackground(Color.green);
+                    btn5.setBackground(Color.green);
+                    btn8.setBackground(Color.green);
+                    
+                    if (btn2.getText().equals("X")) {
+                        mnuMensaje.setText("Ganó: Cruz");
+                    } else {
+                        mnuMensaje.setText("Ganó: Circulo");
+                    }
+                }
+            break;
+        
+            case 3: 
+                //Con 1,2  6,9  y  5,7
+                if (btn1.getText().equals(btn3.getText())
+                    && btn2.getText().equals(btn3.getText())) {
+                    System.out.println("Ya ganó");
+                    
+                    btn3.setBackground(Color.green);
+                    btn1.setBackground(Color.green);
+                    btn2.setBackground(Color.green);
+                    
+                    if (btn3.getText().equals("X")) {
+                        mnuMensaje.setText("Ganó: Cruz");
+                    } else {
+                        mnuMensaje.setText("Ganó: Circulo");
+                    }
+                }
+                
+                if (btn6.getText().equals(btn3.getText())
+                    && btn9.getText().equals(btn3.getText())) {
+                    System.out.println("Ya ganó");
+                    
+                    btn3.setBackground(Color.green);
+                    btn6.setBackground(Color.green);
+                    btn9.setBackground(Color.green);
+                    
+                    if (btn3.getText().equals("X")) {
+                        mnuMensaje.setText("Ganó: Cruz");
+                    } else {
+                        mnuMensaje.setText("Ganó: Circulo");
+                    }
+                }
+                
+                if (btn5.getText().equals(btn3.getText())
+                    && btn7.getText().equals(btn3.getText())) {
+                    System.out.println("Ya ganó");
+                    
+                    btn3.setBackground(Color.green);
+                    btn5.setBackground(Color.green);
+                    btn7.setBackground(Color.green);
+                    
+                    if (btn3.getText().equals("X")) {
+                        mnuMensaje.setText("Ganó: Cruz");
+                    } else {
+                        mnuMensaje.setText("Ganó: Circulo");
+                    }
+                } 
+            break;
+        
+            case 4: 
+                //1,7 y 5,6
+                if (btn1.getText().equals(btn4.getText())
+                    && btn7.getText().equals(btn4.getText())) {
+                    System.out.println("Ya ganó");
+                    
+                    btn4.setBackground(Color.green);
+                    btn1.setBackground(Color.green);
+                    btn7.setBackground(Color.green);
+                    
+                    if (btn4.getText().equals("X")) {
+                        mnuMensaje.setText("Ganó: Cruz");
+                    } else {
+                        mnuMensaje.setText("Ganó: Circulo");
+                    }
+                }
+                
+                if (btn5.getText().equals(btn4.getText())
+                    && btn6.getText().equals(btn4.getText())) {
+                    System.out.println("Ya ganó");
+                    
+                    btn4.setBackground(Color.green);
+                    btn5.setBackground(Color.green);
+                    btn6.setBackground(Color.green);
+                    
+                    if (btn4.getText().equals("X")) {
+                        mnuMensaje.setText("Ganó: Cruz");
+                    } else {
+                        mnuMensaje.setText("Ganó: Circulo");
+                    }
+                }
+            break;
+                
+            case 5:   
+                //2,8  4,6  1,9  7,3
+                if (btn2.getText().equals(btn5.getText())
+                    && btn8.getText().equals(btn5.getText())) {
+                    System.out.println("Ya ganó");
+                    
+                    btn5.setBackground(Color.green);
+                    btn2.setBackground(Color.green);
+                    btn8.setBackground(Color.green);
+                    
+                    if (btn5.getText().equals("X")) {
+                        mnuMensaje.setText("Ganó: Cruz");
+                    } else {
+                        mnuMensaje.setText("Ganó: Circulo");
+                    }
+                }
+                
+                if (btn4.getText().equals(btn5.getText())
+                    && btn6.getText().equals(btn5.getText())) {
+                    System.out.println("Ya ganó");
+                    
+                    btn5.setBackground(Color.green);
+                    btn4.setBackground(Color.green);
+                    btn6.setBackground(Color.green);
+                    
+                    if (btn5.getText().equals("X")) {
+                        mnuMensaje.setText("Ganó: Cruz");
+                    } else {
+                        mnuMensaje.setText("Ganó: Circulo");
+                    }
+                }
+                
+                if (btn1.getText().equals(btn5.getText())
+                    && btn9.getText().equals(btn5.getText())) {
+                    System.out.println("Ya ganó");
+                    
+                    btn5.setBackground(Color.green);
+                    btn1.setBackground(Color.green);
+                    btn9.setBackground(Color.green);
+                    
+                    if (btn5.getText().equals("X")) {
+                        mnuMensaje.setText("Ganó: Cruz");
+                    } else {
+                        mnuMensaje.setText("Ganó: Circulo");
+                    }
+                }
+                
+                if (btn7.getText().equals(btn5.getText())
+                    && btn3.getText().equals(btn5.getText())) {
+                    System.out.println("Ya ganó");
+                    
+                    btn5.setBackground(Color.green);
+                    btn7.setBackground(Color.green);
+                    btn3.setBackground(Color.green);
+                    
+                    if (btn5.getText().equals("X")) {
+                        mnuMensaje.setText("Ganó: Cruz");
+                    } else {
+                        mnuMensaje.setText("Ganó: Circulo");
+                    }
+                }
+            break;
+        
+            case 6: 
+                //3,9 y 4,5
+                if (btn3.getText().equals(btn6.getText())
+                    && btn9.getText().equals(btn6.getText())) {
+                    System.out.println("Ya ganó");
+                    
+                    btn6.setBackground(Color.green);
+                    btn3.setBackground(Color.green);
+                    btn9.setBackground(Color.green);
+                    
+                    if (btn6.getText().equals("X")) {
+                        mnuMensaje.setText("Ganó: Cruz");
+                    } else {
+                        mnuMensaje.setText("Ganó: Circulo");
+                    }
+                }
+                
+                if (btn4.getText().equals(btn6.getText())
+                    && btn5.getText().equals(btn6.getText())) {
+                    System.out.println("Ya ganó");
+                    
+                    btn6.setBackground(Color.green);
+                    btn4.setBackground(Color.green);
+                    btn5.setBackground(Color.green);
+                    
+                    if (btn6.getText().equals("X")) {
+                        mnuMensaje.setText("Ganó: Cruz");
+                    } else {
+                        mnuMensaje.setText("Ganó: Circulo");
+                    }
+                }
+            break;
+        
+            case 7: 
+                // 1,4  8,9  5,3
+                if (btn1.getText().equals(btn7.getText())
+                    && btn4.getText().equals(btn7.getText())) {
+                    System.out.println("Ya ganó");
+                    
+                    btn7.setBackground(Color.green);
+                    btn1.setBackground(Color.green);
+                    btn4.setBackground(Color.green);
+                    
+                    if (btn7.getText().equals("X")) {
+                        mnuMensaje.setText("Ganó: Cruz");
+                    } else {
+                        mnuMensaje.setText("Ganó: Circulo");
+                    }
+                }
+                
+                if (btn8.getText().equals(btn7.getText())
+                    && btn9.getText().equals(btn7.getText())) {
+                    System.out.println("Ya ganó");
+                    
+                    btn7.setBackground(Color.green);
+                    btn8.setBackground(Color.green);
+                    btn9.setBackground(Color.green);
+                    
+                    if (btn7.getText().equals("X")) {
+                        mnuMensaje.setText("Ganó: Cruz");
+                    } else {
+                        mnuMensaje.setText("Ganó: Circulo");
+                    }
+                }
+                
+                if (btn5.getText().equals(btn7.getText())
+                    && btn3.getText().equals(btn7.getText())) {
+                    System.out.println("Ya ganó");
+                    
+                    btn7.setBackground(Color.green);
+                    btn5.setBackground(Color.green);
+                    btn3.setBackground(Color.green);
+                    
+                    if (btn7.getText().equals("X")) {
+                        mnuMensaje.setText("Ganó: Cruz");
+                    } else {
+                        mnuMensaje.setText("Ganó: Circulo");
+                    }
+                }
+            break;
+        
+            case 8: 
+                //2,5  7,9
+                if (btn2.getText().equals(btn8.getText())
+                    && btn5.getText().equals(btn8.getText())) {
+                    System.out.println("Ya ganó");
+                    
+                    btn8.setBackground(Color.green);
+                    btn2.setBackground(Color.green);
+                    btn5.setBackground(Color.green);
+                    
+                    if (btn8.getText().equals("X")) {
+                        mnuMensaje.setText("Ganó: Cruz");
+                    } else {
+                        mnuMensaje.setText("Ganó: Circulo");
+                    }
+                }
+                
+                if (btn7.getText().equals(btn8.getText())
+                    && btn9.getText().equals(btn8.getText())) {
+                    System.out.println("Ya ganó");
+                    
+                    btn8.setBackground(Color.green);
+                    btn7.setBackground(Color.green);
+                    btn9.setBackground(Color.green);
+                    
+                    if (btn8.getText().equals("X")) {
+                        mnuMensaje.setText("Ganó: Cruz");
+                    } else {
+                        mnuMensaje.setText("Ganó: Circulo");
+                    }
+                }
+            break;
+                
+            case 9:
+                //1,5  7,8  3,6
+                if (btn1.getText().equals(btn9.getText())
+                    && btn5.getText().equals(btn9.getText())) {
+                    System.out.println("Ya ganó");
+                    
+                    btn9.setBackground(Color.green);
+                    btn1.setBackground(Color.green);
+                    btn5.setBackground(Color.green);
+                    
+                    if (btn9.getText().equals("X")) {
+                        mnuMensaje.setText("Ganó: Cruz");
+                    } else {
+                        mnuMensaje.setText("Ganó: Circulo");
+                    }
+                }
+                
+                if (btn7.getText().equals(btn9.getText())
+                    && btn8.getText().equals(btn9.getText())) {
+                    System.out.println("Ya ganó");
+                    
+                    btn9.setBackground(Color.green);
+                    btn7.setBackground(Color.green);
+                    btn8.setBackground(Color.green);
+                    
+                    if (btn9.getText().equals("X")) {
+                        mnuMensaje.setText("Ganó: Cruz");
+                    } else {
+                        mnuMensaje.setText("Ganó: Circulo");
+                    }
+                }
+                
+                if (btn3.getText().equals(btn9.getText())
+                    && btn6.getText().equals(btn9.getText())) {
+                    System.out.println("Ya ganó");
+                    
+                    btn9.setBackground(Color.green);
+                    btn3.setBackground(Color.green);
+                    btn6.setBackground(Color.green);
+                    
+                    if (btn9.getText().equals("X")) {
+                        mnuMensaje.setText("Ganó: Cruz");
+                    } else {
+                        mnuMensaje.setText("Ganó: Circulo");
+                    }
+                }
+            break;
+        }
+    }
+    
     /**
      * @param args the command line arguments
      */
@@ -119,21 +712,58 @@ public class VentanaJuego extends javax.swing.JFrame {
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
+            @Override
             public void run() {
                 new VentanaJuego().setVisible(true);
             }
         });
     }
-
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
-    private javax.swing.JButton jButton6;
-    private javax.swing.JButton jButton7;
-    private javax.swing.JButton jButton8;
-    private javax.swing.JButton jButton9;
+    private javax.swing.JButton btn1;
+    private javax.swing.JButton btn2;
+    private javax.swing.JButton btn3;
+    private javax.swing.JButton btn4;
+    private javax.swing.JButton btn5;
+    private javax.swing.JButton btn6;
+    private javax.swing.JButton btn7;
+    private javax.swing.JButton btn8;
+    private javax.swing.JButton btn9;
+    private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JMenuItem jMenuItem1;
+    private javax.swing.JMenuItem jMenuItem2;
+    private javax.swing.JMenu mnuMensaje;
+    private javax.swing.JMenu mnuNuevo;
+    private javax.swing.JMenuItem mnuNuevo2;
     // End of variables declaration//GEN-END:variables
+}
+
+class miCanvas extends Canvas {
+
+    private static final long serialVersionUID = 1L;
+
+    private int ancho;
+    private int alto;
+
+    public miCanvas(int anc, int alt) {
+        ancho = anc;
+        alto = alt;
+
+        setBounds(0, 0, anc, alt);
+    }
+
+    @Override
+    public void paint(Graphics g) {
+        g.setColor(Color.blue);
+        g.fillRect(0, 0, ancho, alto);
+    }
+
+
+    @Override
+    public void processMouseEvent(MouseEvent evt) {
+        //if (evt.getX() < ancho && evt.getY() < alto) {            
+            System.out.println("Raton en Canvas: (" + evt.getX() + "," + evt.getY() + ")");
+            //return true;
+        //}
+        //return false;
+    }
 }
